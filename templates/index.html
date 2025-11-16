@@ -1,0 +1,76 @@
+<!-- ===============================================
+index.html — Frontend for Recipe Finder
+---------------------------------------------------
+HTML interface for searching recipes, viewing random
+recipes, and showing detailed information in a modal.
+================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Can I Cook?</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <!-- Main Container -->
+  <div class="recipe-finder-container">
+    <h1>What Can I Cook?</h1>
+
+    <!-- Search Box -->
+    <form id="search-form" class="search-box">
+      <input type="text" id="search-input" placeholder="Search by ingredients (e.g. 'tomato')" />
+      <button type="submit" id="search-button">Search</button>
+    </form>
+
+    <!-- Random Recipe Button -->
+    <div class="random-button-container">
+      <button id="random-button" class="random-button">
+        Get Started by Random Recipe
+      </button>
+    </div>
+
+    <!-- Message Display Area -->
+    <div class="message" id="message-area">
+      Search for a recipe or get a random one!
+    </div>
+
+    <!-- Search Results Grid -->
+    <div class="results-grid" id="results-grid"></div>
+  </div>
+
+  <!-- Modal for Recipe Details -->
+  <div class="modal-container hidden" id="recipe-modal">
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close-btn">+</button>
+      <div id="recipe-details-content"></div>
+    </div>
+  </div>
+
+  <!-- App Description -->
+  <center><p class="app-description">
+    <strong>What Can I Cook?</strong> <br>is a smart food suggestion web application designed
+    to help users find recipes based on the <br>ingredients they already have at home.
+    It solves a common everyday problem —<br>
+    <em>"What can I make with what’s in my kitchen?"</em>
+  </p></center>
+
+  <!-- Footer with Developer Team Name -->
+  <footer class="footer">
+    <p>
+      <center>Developed by 24120018 & 24120014 B.sc AIML 2Year</center>
+    </p>
+  </footer>
+  <!-- JavaScript -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
